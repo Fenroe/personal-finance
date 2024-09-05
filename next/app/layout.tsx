@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Image from "next/image";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +17,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <header className="h-project-header bg-grey-900 w-full flex justify-center items-center absolute">
+          <Image
+            src="/assets/images/logo-large.svg"
+            alt="Finance"
+            width={0}
+            height={0}
+            className="w-auto he-auto"
+          />
+        </header>
+        {children}
+      </body>
     </html>
   );
 }

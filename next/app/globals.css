@@ -2,32 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@layer base {
+  @font-face {
+    font-family: "Public Sans", sans-serif;
+    font-weight: 700;
+    src: url("/assets/fonts/static/PublicSans-Bold.ttf") format("ttf");
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  @font-face {
+    font-family: "Public Sans", sans-serif;
+    font-weight: 400;
+    src: url("/assets/fonts/static/PublicSans-Regular.ttf") format("ttf");
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+@layer components {
+  .text-preset-1 {
+    @apply font-project font-bold text-2xl;
+  }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .text-preset-4-b {
+    @apply font-project font-bold text-md;
+  }
+
+  .text-preset-4-r {
+    @apply font-project font-normal text-md;
+  }
+
+  .text-preset-5-b {
+    @apply font-bold font-project text-sm;
   }
 }
