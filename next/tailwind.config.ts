@@ -51,9 +51,6 @@ const config: Config = {
         "project-header": "70px",
         "project-main": "calc(100vh - 70px)",
       },
-      fontFamily: {
-        project: "Public Sans",
-      },
     },
   },
   plugins: [],

@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
+//👇 Import our second font
+import localFont from 'next/font/local'
 
-const inter = Inter({ subsets: ["latin"] });
+//👇 Configure our local font object
+const publicSans = localFont({ src: './PublicSans-VariableFont_wght.ttf' })
 
 export const metadata: Metadata = {
   title: "Finance",
@@ -17,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={publicSans.className}>
         <header className="h-project-header bg-grey-900 w-full flex justify-center items-center xl:hidden">
           <Image
             src="/assets/images/logo-large.svg"
