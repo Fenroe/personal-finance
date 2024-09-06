@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <header className="h-project-header bg-grey-900 w-full flex justify-center items-center absolute">
+        <header className="h-project-header bg-grey-900 w-full flex justify-center items-center">
           <Image
             src="/assets/images/logo-large.svg"
             alt="Finance"
