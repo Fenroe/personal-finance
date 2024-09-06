@@ -33,3 +33,9 @@
     @apply font-bold font-project text-sm;
   }
 }
+
+.login-signup-desktop-container {
+  background-image: url("/assets/images/illustration-authentication.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}

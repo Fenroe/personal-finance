@@ -1,74 +1,32 @@
-"use client";
+import { SignupForm } from "@/components";
 import Image from "next/image";
-import { useState } from "react";
 
 export default function Home() {
-  const [showPassword, setShowPassword] = useState<boolean>(false);
-
   return (
-    <main className="bg-beige-100 w-full h-project-main p-project-200 flex justify-center items-center md:px-project-500 md:py-project-400">
-      <form
-        action=""
-        className="bg-white w-full max-w-[560px] px-project-250 py-project-300 flex flex-col gap-project-400 rounded-lg"
-      >
-        <h1 className="text-preset-1">Login</h1>
-        <div className="flex flex-col gap-project-200">
-          <div className="flex flex-col gap-project-50">
-            <label htmlFor="" className="text-grey-500 text-preset-5-b">
-              Email
-            </label>
-            <input
-              type="email"
-              className="p-project-200 border-beige-500 border-2 rounded-lg"
-            />
-          </div>
-          <div className="flex flex-col gap-project-50">
-            <label htmlFor="password" className="text-grey-500 text-preset-5-b">
-              Password
-            </label>
-            <div className="relative">
-              <input
-                name="password"
-                id="password"
-                type={showPassword ? "text" : "password"}
-                className="p-project-200 border-beige-500 border-2 rounded-lg w-full pr-[64px]"
-              />
-              <button
-                onClick={() => setShowPassword(!showPassword)}
-                type="button"
-                className="h-full absolute top-1/2 -translate-y-1/2 right-0 px-project-200"
-              >
-                {showPassword ? (
-                  <Image
-                    src="/assets/images/icon-hide-password.svg"
-                    alt="Hide password"
-                    width={0}
-                    height={0}
-                    className="w-auto h-auto"
-                  />
-                ) : (
-                  <Image
-                    src="/assets/images/icon-show-password.svg"
-                    alt="Show password"
-                    width={0}
-                    height={0}
-                    className="w-auto h-auto"
-                  />
-                )}
-              </button>
-            </div>
+    <main className="bg-beige-100 w-full h-project-main flex justify-center items-center xl:justify-between xl:h-screen">
+      <div className="p-project-250 hidden xl:flex w-[600px] h-full">
+        <div className="w-full p-project-500 login-signup-desktop-container flex flex-col h-full justify-between">
+          <Image
+            src="/assets/images/logo-large.svg"
+            alt="Finance"
+            width={122}
+            height={0}
+            className="h-auto"
+          />
+          <div className="flex flex-col gap-project-300">
+            <h1 className="text-preset-1 text-white">
+              Keep track of your money <br />
+              and save for your future.
+            </h1>
+            <h2 className="text-preset-4-r text-white">
+              Personal finance app puts you in control of your spending. Track{" "}
+              <br />
+              transactions, set budgets, and add to savings pots easily.
+            </h2>
           </div>
         </div>
-        <button className="py-project-200 bg-grey-900 text-white rounded-lg text-preset-4-b">
-          Log in
-        </button>
-        <span className="text-center text-preset-4-r">
-          Need to create an account?{" "}
-          <a href="/signup" className="text-preset-4-b underline">
-            Sign Up
-          </a>
-        </span>
-      </form>
+      </div>
+      <SignupForm />
     </main>
   );
 }
