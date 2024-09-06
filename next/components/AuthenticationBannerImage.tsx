@@ -3,8 +3,8 @@ import { LogoLink } from "./LogoLink";
 
 export const AuthenticationBannerImage = () => {
   return (
-    <div className="p-project-250 hidden xl:flex w-[600px] h-full">
-      <div className="w-full p-project-500 login-signup-desktop-container flex flex-col h-full justify-between">
+    <div className="p-project-250 hidden xl:flex flex-1 justify-center h-full">
+      <div className="p-project-500 login-signup-desktop-container flex flex-col w-[600px] h-full justify-between">
         <LogoLink />
         <div className="flex flex-col gap-project-300">
           <h1 className="text-preset-1 text-white">
